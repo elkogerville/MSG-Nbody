@@ -1,4 +1,6 @@
 # MSG-Nbody
+<div align="justify"> 
+
 This package offers an efficient fully vectorized numpy implementation of the particle-particle N-body simulation algorithm which integrates the motion of stellar particles through space under their mutual gravitational attraction. Intitial conditions of different galaxy models in equilibrium are provided, including a Hernquist spherical galaxy and a simple disk galaxy. Yet, any set of initial conditions can be used as inputs to the simulation code, which will integrate their motions and output snapshot files saved directly to a specified directory. On a reasonably powerful personal computer, the code can support up to ~20000 - 30000 particles with runtimes on the order of a couple days. Lowering the number of particles will yield drastically faster runtimes. The time to complete 2000 timesteps as a function of number of particles is plotted.
 
 ## The N-Body Problem
@@ -14,3 +16,6 @@ Because this algorithm calculates the gravitational force from each particle ont
 ## N-Body Particle-Particle Algorithm
 Once the acceleration onto each particle is computed for a given timestep using equation 2, the positions and velocities of the next timestep can then be calculated using the standard kinematic equations of motion (equations 4 and 5). The leap-frog algorithm computes the velocities and positions at interleaved timesteps where the velocities are calculated at half timesteps before and after computing the new positions. This creates a ’kick,’ ’drift,’ ’kick’ method conserving Energy to the second order and is a good trade-off between accuracy and computational efficiency. The new positions are then used to calculate a new set of accelerations, continuing the cycle endlessly.
 $$v_{t+\frac{1}{2}} = v_{t} + g_{t} \frac{\Delta t}{2} \qquad (4) \qquad \qquad x_{t+1} = x_{t} + v_{t+\frac{1}{2}} \Delta t \qquad (5)$$
+
+
+</div>
