@@ -1,5 +1,5 @@
 # MSG-Nbody
-N-body simulation using the particle-particle algorithm for studying galaxy mergers with particles on the order of ~ $10^4$
+This package offers an efficient fully vectorized numpy implementation of the particle-particle N-body simulation algorithm which integrates the motion of stellar particles through space under their mutual gravitational attraction. Intitial conditions of different galaxy models in equilibrium are provided, including a Hernquist spherical galaxy and a simple disk galaxy. Yet, any set of initial conditions can be used as inputs to the simulation code, which will integrate their motions and output snapshot files saved directly to a specified directory. On a reasonably powerful personal computer, the code can support up to ~20000 - 30000 particles with runtimes on the order of a couple days. Lowering the number of particles will yield drastically faster runtimes. The time to complete 2000 timesteps as a function of number of particles is plotted.
 
 ## The N-Body Problem
 
