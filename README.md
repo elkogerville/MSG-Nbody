@@ -30,6 +30,10 @@ Numpy for numerical computation
 ```
 $ conda install numpy
 ```
+SciPy for numerical integration
+```
+$ conda install scipy
+```
 Matplotlib for data visualization 
 ```
 $ conda install matplotlib
