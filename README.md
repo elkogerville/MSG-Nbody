@@ -34,6 +34,10 @@ Matplotlib for data visualization
 ```
 $ conda install matplotlib
 ```
+tqdm for progress bar
+```
+$ conda install -c conda-forge tqdm
+```
 OPTIONAL BUT HIGHLY RECOMMENDED: 
 \
 Numba for faster simulation runtimes
