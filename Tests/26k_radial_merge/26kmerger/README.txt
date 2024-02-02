@@ -1,0 +1,1 @@
+this folder is for saving simulation snapshots for the 26k_edgeon_merger.py simulation. This folder should be in the same directory as the python simulation script.}
