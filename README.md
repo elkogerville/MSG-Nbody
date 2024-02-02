@@ -59,7 +59,7 @@ The integrator saves the phase space coordinates $x,y,z,v_{x},v_{y},v_{z}$, and 
   <img src="ANIMATIONS/sim3plot_ne.png" width="430" align = 'right'>
 </figure>
 <figure>
-  <img src="ANIMATIONS/sim1_145cb.png" width="500" height="430" align = 'left'>
+  <img src="ANIMATIONS/sim1_145cb.png" width="450" height="430" align = 'left'>
 </figure>
 
 <br>
