@@ -47,6 +47,7 @@ def display(galaxies, scale = 100, savefig = False):
     savefig [boolean]: set to True to save figure to directory as a png
     OUTPUT [matplotlib figure]: displays the positions of the galaxies in a plot
     """
+    import matplotlib.pyplot as plt
     # setup figure with 2 subplots, one for plotting x,y projection, the other for plotting x,z projection
     fig, ax = plt.subplots(1,2, figsize = (10,5))
     # format axes, minorticks, fonts, and plot colors
@@ -84,10 +85,12 @@ def display(galaxies, scale = 100, savefig = False):
     
 def get_Energy(vel, pot):
     '''computes the relative Energy, epsilon, based on the velocity and potential'''
+    import numpy as np
     epsilon = pot - (1/2)*(vel[:,0:1]**2 + vel[:,1:2]**2 + vel[:,2:3]**2)
     return epsilon
 
 def plot_Ne(Energies, labels, savefig = False, bin_m = -3,  bin_M = .1):
+    import matplotlib.pyplot as plt
     # setup figure
     plt.figure(figsize = (5,5))
     plt.rcParams['font.family'] = 'Courier New'
