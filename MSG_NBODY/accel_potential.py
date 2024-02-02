@@ -9,6 +9,7 @@ def accel_potential(position, mass, Sf, mT):
     mT [NumPy array]: N x N array of every mass-mass product, this value is precomputed by the program and doesn't require user input
     OUTPUT [NumPy array]: N x 3 array containing the gravitational acceleration onto each particle in the simulation
     '''
+    import numpy as np
     G = 1
     # seperate position into x,y,z components
     x = position[:, 0:1]
