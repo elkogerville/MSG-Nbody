@@ -9,7 +9,23 @@ This package offers an efficient fully vectorized numpy implementation of the pa
 
 ## Documentation and How to Use
 For an in-depth documentation review please see the 'Documentation_and_Startup_Guide' jupyter notebook located in the 'Tests' directory. This is an overview of how to setup and run a simulation between two colliding disk galaxies. The 'Generate_Spherical_Galaxy_Conditions' notebook demonstrates how to generate your initial conditions of a spherically symmetric galaxy. 
-
+```python
+# create spherical galaxy initial conditions, with a 2:1 mass ratio
+galaxy_1 = spherical_galaxy(N = 15000, mass = 5, scale_length = 2)
+galaxy_2 = spherical_galaxy(N = 13000, mass = 2.5, scale_length = 1)
+# seperate into position, velocity, and mass arrays
+gal1_pos, gal1_vel, gal1_mas = galaxy_1[:,0:3], galaxy_1[:,3:6], galaxy_1[:,6:7]
+gal2_pos, gal2_vel, gal2_mas = galaxy_2[:,0:3], galaxy_2[:,3:6], galaxy_2[:,6:7]
+# move perturber galaxy away from host galaxy and set it on collision path
+gal2_pos += [40, 40, 0]
+gal2_vel += [-0.2, -0.12, 0]
+# append positions, velocities, and masses into 3 master arrays
+positions = np.append(gal1_pos, gal2_pos, axis = 0)
+velocities = np.append(gal1_vel, gal2_vel, axis = 0)
+masses = np.append(gal1_mas, gal2_mas, axis = 0)
+# run N-body simulation
+MSGnbody(positions, velocities, masses, 0.01, 5000, 'folder/snapshot_{}.npy', mod = 10)
+```
 ## The N-Body Problem
 
 <figure>
