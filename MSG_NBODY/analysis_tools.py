@@ -8,6 +8,7 @@ def load_galaxies(directory, timesteps, N, Ngal1):
     Ngal1 [integer]: total number of particles in galaxy one
     OUTPUT [NumPy array]: position, velocity, and potential arrays for each galaxy with shapes (timesteps x N x 3)
     '''
+    import numpy as np
     mod = 10
     # number of timesteps counting timestep 0
     Ntimesteps = int((timesteps + 1)/mod) + 1
