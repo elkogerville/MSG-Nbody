@@ -10,6 +10,7 @@ This package offers an efficient fully vectorized 3-dimensional NumPy implementa
 ## Documentation and How to Use
 For an in-depth documentation review please see the 'Documentation_and_Startup_Guide' jupyter notebook located in the 'Tests' directory. This is an overview of how to set up and run an N-body simulation between two colliding disk galaxies with 12,000 total particles. The 'Generate_Spherical_Galaxy_Conditions' notebook demonstrates how to use the spherical_galaxy() function to generate initial conditions for a spherically symmetric galaxy. However, this program is flexible and can take any set of initial conditions in the form of NumPy arrays as inputs.
 ```python
+from MSG_NBODY import *
 # create spherical galaxy initial conditions, with a 2:1 mass ratio
 galaxy_1 = spherical_galaxy(N = 15000, mass = 5, scale_length = 2)
 galaxy_2 = spherical_galaxy(N = 13000, mass = 2.5, scale_length = 1)
