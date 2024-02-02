@@ -56,30 +56,9 @@ $$v_{t+\frac{1}{2}} = v_{t} + g_{t} \frac{\Delta t}{2} \qquad (4) \qquad \qquad 
 The integrator saves the phase space coordinates $x,y,z,v_{x},v_{y},v_{z}$, and potential $\phi_{i} = \frac{1}{m_{i}}\sum_{j} \frac{Gm_{j}}{|r_{j}-r_{i} + \epsilon|}$ of each particle every 10 timesteps as a $Nx7$ matrix. Moreover, in all simulations runs model units are assumed, where the gravitational constant $G$, the total system mass $M$, and scale length $\alpha$ are all set equal to 1. The models can then easily be scaled relative to each other by multiplying the initial phase space coordinates and masses by scalar quantities. Furthermore, in these models, each particle represents a large collection of stars since these simulations support $N \propto 10^4$ particles, or many orders of magnitude less than real galaxies. Thus, the greater the number of particles, the higher the simulation resolution. Certain features seen in merger remnants such as stellar shells require large numbers of particles to resolve. As such, simulating millions of particles requires both heavy computational power from super-clusters and more efficient N-body integration schemes.
 
 <figure>
-  <img src="ANIMATIONS/sim1_145cb.png" width="430" height="430" align = 'left'>
+  <img src="ANIMATIONS/panel.png" width="1000" height="430" align = 'center'>
 </figure>
 
-<figure>
-  <img src="ANIMATIONS/sim3plot_ne.png" width="430" align = 'right'>
-</figure>
-
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 <br>
 
 ## Requirements
