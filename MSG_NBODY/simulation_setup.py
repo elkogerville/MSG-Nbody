@@ -4,6 +4,7 @@ def load_phase(initial_phase):
     initial_phase [NumPy array]: initial N x 7 array of positions, velocities, and masses
     OUTPUT [NumPy array]: N x 3 position array, N x 3 velocity array, and N x 1 mass array
     '''
+    import numpy as np
     # read initial conditions into Python
     phase_space = np.loadtxt(initial_phase)
     # index the initial N x 7 array into respective arrays and return
@@ -16,6 +17,7 @@ def scale_phase(pos, vel, mas, R, M):
     R, M [float]: quantities to scale the positions, velocities, and masses by
     OUTPUT [NumPy array]: scaled position, velocity, and mass arrays
     '''
+    import numpy as np
     G = 1 
     # scale position, velocity, and mass by scalar quantities. the velocities are scaled proportionally to a circular orbit velocity
     pos = pos * R
@@ -32,6 +34,7 @@ def rotate_disk(pos, vel, deg, axis):
     axis [string]: set this argument to 'x', 'y', or 'z' to rotate around that axis
     OUTPUT [NumPy array]: rotated position and velocity arrays
     '''
+    import numpy as np
     # convert degrees to radians
     rad = np.deg2rad(deg)
     # define sin and cosine functions
@@ -65,6 +68,7 @@ def escape_v(x, y, z, M):
     M [float]: total mass of host galaxy
     OUTPUT [float]: magnitude of the escape velocity of the satellite galaxy at the specified distance from the host galaxy
     '''
+    import numpy as np
     G = 1
     # find length of vector between origin and 
     r = np.sqrt(x**2 + y**2 + z**2)
@@ -77,6 +81,7 @@ def merger_init(pos1, vel1, mas1, pos2, vel2, mas2):
     pos2, vel2, mas2 [NumPy array]: position, velocity, and mass arrays of the second galaxy
     OUTPUT [NumPy array]: contiguous position, velocity, and mass arrays containing both galaxies
     '''
+    import numpy as np
     # append the second galaxy to the first
     pos = np.append(pos1, pos2, axis = 0)
     vel = np.append(vel1, vel2, axis = 0)
