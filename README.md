@@ -91,7 +91,7 @@ This code has been optimized for 3-dimensional gravitational interactions of ste
 - Velocities [N x 3]
 - Masses [N x 1]
 <br>
-This is because in 3 dimensions, positions and velocities have x, y, and z components, while the mass array should contain the mass of each particle in the simulation. If one of the arrays has the incorrect shape, please reshape it using .reshape() NumPy method;
+This is because in 3 dimensions, positions and velocities have x, y, and z components, while the mass array should contain the mass of each particle in the simulation. If one of the arrays has the incorrect shape, please reshape it using the .reshape() NumPy method;
 e.i: positions = positions.reshape(N,3) where N is an integer corresponding to the total number of particles.
 
 ## Acknowledgments
