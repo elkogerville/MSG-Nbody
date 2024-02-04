@@ -8,7 +8,7 @@
 This Python package offers an efficient, fully vectorized 3-dimensional NumPy implementation of the particle-particle N-body simulation algorithm which integrates the motion of stellar particles through space under their mutual gravitational attraction. Initial conditions of different galaxy models in equilibrium are provided, including a Hernquist spherical galaxy and a simple disk galaxy. The algorithm for generating spherical galaxy initial conditions of different masses and scale lengths is also provided for further customizations. Yet, any set of initial conditions can be used as inputs to the simulation code, which will integrate their motions and output snapshot files saved directly to a specified directory. On a reasonably powerful personal computer, the code can support up to ~20,000 - 30,000 particles with runtimes on the order of a couple of days. Lowering the number of particles and switching to the Numba compiler will yield drastically faster runtimes. The time to complete 2000 timesteps as a function of number of particles is plotted in Figure 1, with the nopython Numba compiler offering a substantial decrease in computation time over the standard Python compiler. Therefore the purpose of this package is to provide an accessible package that is simple to set up and modify yet still simulates the effects of gravity with reasonable accuracy for users not conducting serious astrophysical research.
 
 ## Documentation and How to Use
-For an in-depth documentation review please see the 'Documentation_and_Startup_Guide' jupyter notebook in the 'Tests' directory. This is an overview of how to set up and run an N-body simulation between two colliding disk galaxies with 12,000 total particles. In the 'Tests' folder there are numerous programs for the user to try, including jupyter notebook guides as well as Python programs to run from the terminal. The 'Generate_Spherical_Galaxy_Conditions' notebook demonstrates how to use the spherical_galaxy() function to generate initial conditions for a spherically symmetric galaxy. However, this program is flexible and can take any set of initial conditions in the form of NumPy arrays as inputs. The code below demonstrates a simple 2:1 merger between two Hernquist spherical galaxies.
+For an in-depth documentation review please see the 'Documentation_and_Startup_Guide' jupyter notebook in the 'Tests' directory. This is an overview of how to set up and run an N-body simulation between two colliding disk galaxies with 12,000 total particles. In the 'Tests' folder there are numerous programs for the user to try, including jupyter notebook guides as well as Python programs to run from the terminal. The 'Generate_Spherical_Galaxy_Conditions' notebook demonstrates how to use the spherical_galaxy() function to generate initial conditions for a spherically symmetric galaxy. The N-body simulation code is flexible, however, and can take any set of initial conditions in the form of NumPy arrays as inputs. The code below demonstrates a simple 2:1 merger between two Hernquist spherical galaxies.
 ```python
 from MSG_NBODY import *
 # create spherical galaxy initial conditions, with a 2:1 mass ratio
@@ -84,6 +84,14 @@ Numba for faster simulation runtimes
 ```
 $ conda install numba
 ```
+
+## Troubleshooting
+This code has been optimized for 3-dimensional gravitational interactions of stellar particles. The Numba compiler also expects the input arrays to have the correct dimensions and will error otherwise. For N particles, please ensure the following NumPy arrays have shapes:
+- Positions [N x 3]
+- Velocities [N x 3]
+- Masses [N x 1]
+<br>
+This is because in 3 dimensions, positions and velocities have $x, y,$ and $z$ components, while the mass array should contain the mass of each particle in the simulation. If one of the arrays has the incorrect shape, please reshape it using .reshape(); e.i: positions = positions.reshape(N,3) where N is an integer corresponding to the total number of particles.
 
 ## Acknowledgments
 I would like to thank Professor Jeffrey Kenney, Professor Marla Geha, and Shashank Dattathri for providing invaluable help in completing this project.
