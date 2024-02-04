@@ -3,9 +3,9 @@ from tqdm import tqdm
 from numba import njit
 import matplotlib.pyplot as plt
 """
-this program integrates the orbits of a 10:1 face-on minor merger of a Hernquist spherical galaxy and a disk galaxy. 
+this program integrates the orbits of a 10:1 edge-on minor merger of a Hernquist spherical galaxy and a disk galaxy. 
 Download all the files in the 26k_radial_merge directory and run the program from the terminal. The simulation will
-save snapshots to the folder.
+save snapshots to the 26kmerger folder.
 """
 ###########
 # FUNCTIONS
