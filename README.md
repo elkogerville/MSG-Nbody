@@ -86,7 +86,7 @@ $ conda install numba
 ```
 
 ## Acknowledgments
-I would like to thank Professor Jeffrey Kenney and Shashank Dattathri for providing invaluable help in completing this project.
+I would like to thank Professor Jeffrey Kenney, Professor Marla Geha, and Shashank Dattathri for providing invaluable help in completing this project.
 This would not have been possible without them. I would also like to thank my Astro Big-Sib Sebastian Monzon and Barry Chiang for helping me out with running the simulations. 
 
 <figure>
