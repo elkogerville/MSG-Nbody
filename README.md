@@ -1,6 +1,5 @@
 # MSG-Nbody
 ### Vectorized Particle-Particle N-body Simulator and Galaxy Model Initial Conditions Generator
-
 ![My Image](ANIMATIONS/sim2grid.png)
 
 <div align="justify"> 
