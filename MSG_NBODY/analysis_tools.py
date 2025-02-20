@@ -86,7 +86,7 @@ def display(galaxies, scale = 100, savefig = False):
 def get_Energy(vel, pot):
     '''computes the relative Energy, epsilon, based on the velocity and potential'''
     import numpy as np
-    epsilon = pot - (1/2)*(vel[:,0:1]**2 + vel[:,1:2]**2 + vel[:,2:3]**2)
+    epsilon = pot - (1/2)*(vel[:,:,0:1]**2 + vel[:,:,1:2]**2 + vel[:,:,2:3]**2)
     return epsilon
 
 def plot_Ne(Energies, labels, savefig = False, bin_m = -3,  bin_M = .1):
