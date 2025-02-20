@@ -26,7 +26,7 @@ def MSGnbody(gal_pos, gal_vel, mass, dt, timesteps, directory, **kwargs):
     timesteps = int(timesteps)
     N = gal_pos.shape[0]
     # enforce appropriate array dimensions
-    if (gal_pos.shape != (N, 3)) & (gal_vel.shape != (N, 3)) & (mass.shape != (N, 3)):
+    if (gal_pos.shape != (N, 3)) or (gal_vel.shape != (N, 3)) or (mass.shape != (N, 1)):
         print('ERROR: please ensure gal_pos and gal_vel have shapes (N x 3) and mass has shape (N x 1) where N is the total number of particles. gal_pos shape: {} '.format(gal_pos.shape), 'gal_vel shape: {}'.format(gal_vel.shape), 'mass shape: {}'.format(mass.shape), '\n /ᐠ_ ꞈ _ᐟ\ <(fix it...)')
         raise SystemExit
     
