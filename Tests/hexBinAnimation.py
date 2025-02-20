@@ -1,7 +1,17 @@
+'''
+author: Elko Gerville-Reache
+date Created: 2025-02-10
+last Modified: 2025-02-20
+purpose: animates simulation snapshots where particles are represented as density points using plt.hexbin
+usage: change the params in ANIMATION PARAMS, notably the path to the snapshot directory, number of particles, etc..
+
+notes:
+- requires the installation of numpy, matplotlib, celluloid, ffmpeg, and tqdm
+
+'''
 import numpy as np
 import matplotlib.pyplot as plt
 from celluloid import Camera
-from IPython.display import HTML
 from tqdm import tqdm
 ################################
 # FUNCTIONS
@@ -113,7 +123,9 @@ if comFrame == True:
 
 print('generating animation, sozz pls b patient ₊˚♡₊')
 camera = animateHexbin(pos, animStart, animEnd, scale, gridRes)
-animation = camera.animate() # compile snapshots
+# compile snapshots
+animation = camera.animate() 
 animation.save(animName, fps = animEnd/animLength)
-plt.close() #Stop the empty plot from displaying
+# stop the empty plot from displaying
+plt.close() 
 exit()
