@@ -58,7 +58,7 @@ def display(galaxies, scale = 100, savefig = False):
     plt.rcParams['axes.linewidth'] = 0.6
     plt.rcParams['font.family'] = 'Courier New'
     plt.rcParams['mathtext.default'] = 'regular'
-    color = ['darkslateblue', 'purple', 'mediumslateblue', 'orchid', 'black']
+    color = ['darkslateblue', 'purple', 'palevioletred', 'mediumslateblue', 'orchid', 'black']
     # plot each array in the galaxies list
     for i, g in enumerate(galaxies):
         # plot x,y projection
