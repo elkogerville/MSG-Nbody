@@ -15,7 +15,6 @@ def MSGnbody(gal_pos, gal_vel, mass, dt, timesteps, directory, **kwargs):
     ##################
     # simulation setup
     ##################
-    import numpy as np
     # save every 10 timesteps
     mod = 10
     if 'mod' in kwargs:
@@ -36,11 +35,10 @@ def MSGnbody(gal_pos, gal_vel, mass, dt, timesteps, directory, **kwargs):
         N5 = N/1e5
         return 0.017 * (N5)**(-0.23)
     soft_param = get_softening(gal_pos.shape[0])
-    
-    # calculate particle-particle mass products
-    mass_product = mass*mass.T
+    # allocate acceleration matrix
+    gal_accel = np.zeros((N, 3))
     # calculate initial accelerations 
-    gal_accel, gal_potential = accel_potential(gal_pos, mass, soft_param, mass_product)
+    gal_accel, gal_potential = accel_potential(gal_pos, mass, gal_accel, soft_param)
     
     # save initial conditions
     phase_space0 = np.hstack((gal_pos, gal_vel, gal_potential))
@@ -60,7 +58,7 @@ def MSGnbody(gal_pos, gal_vel, mass, dt, timesteps, directory, **kwargs):
         gal_pos += gal_vel * dt 
         
         # update accelerations
-        gal_accel, gal_potential = accel_potential(gal_pos, mass, soft_param, mass_product)
+        gal_accel, gal_potential = accel_potential(gal_pos, mass, gal_accel, soft_param)
         
         # update velocities
         gal_vel += gal_accel * dt/2.0
