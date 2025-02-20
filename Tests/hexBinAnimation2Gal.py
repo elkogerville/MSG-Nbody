@@ -1,7 +1,17 @@
+'''
+author: Elko Gerville-Reache
+date Created: 2025-02-10
+last Modified: 2025-02-20
+purpose: animates two galaxies merging with distinct cmaps where particles are represented as density points using plt.hexbin
+usage: change the params in ANIMATION PARAMS, notably the path to the snapshot directory, number of particles, etc..
+
+notes:
+- requires the installation of numpy, matplotlib, celluloid, ffmpeg, and tqdm
+
+'''
 import numpy as np
 import matplotlib.pyplot as plt
 from celluloid import Camera
-from IPython.display import HTML
 from tqdm import tqdm
 ################################
 # FUNCTIONS
