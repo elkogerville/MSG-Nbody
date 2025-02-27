@@ -1,3 +1,6 @@
+import numpy as np
+from numba import njit
+
 @njit()
 def accel_potential(pos, mass, accel, softening):
     '''calculates the gravitational acceleration acting onto each particle as well as the potential of each particle
