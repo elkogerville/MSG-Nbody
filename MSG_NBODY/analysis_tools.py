@@ -50,7 +50,6 @@ def display(galaxies, scale = 100, savefig = False):
     savefig [boolean]: set to True to save figure to directory as a png
     OUTPUT [matplotlib figure]: displays the positions of the galaxies in a plot
     """
-    import matplotlib.pyplot as plt
     # setup figure with 2 subplots, one for plotting x,y projection, the other for plotting x,z projection
     fig, ax = plt.subplots(1,2, figsize = (10,5))
     # format axes, minorticks, fonts, and plot colors
