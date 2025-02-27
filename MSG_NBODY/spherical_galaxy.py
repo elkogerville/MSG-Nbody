@@ -1,3 +1,7 @@
+import numpy as np
+from scipy.integrate import quad
+from tqdm import tqdm 
+
 def spherical_galaxy(N, mass, scale_length):
     '''generates the initial phase space coordinates for a Hernquist spherical galaxy in equilibrium
     ------------------------------------------------------------------------------------------------
@@ -6,10 +10,6 @@ def spherical_galaxy(N, mass, scale_length):
     scale_length [float]: scale length of galaxy; radius at which density drops off substantially
     OUTPUT [NumPy array]: N x 7 array of positions, velocities, and masses of galaxy
     '''
-    # import dependencies
-    import numpy as np # numerical computation
-    from scipy.integrate import quad # integration
-    from tqdm import tqdm # progress bar
     # quantize N
     N = int(N)
     # generate array of logspaced radii from 10e-3 to 10e3 to sample from theoretical model
