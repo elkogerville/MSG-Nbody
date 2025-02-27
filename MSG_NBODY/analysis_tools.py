@@ -1,3 +1,7 @@
+import numpy as np
+import matplotlib.pyplot as plt
+from tqdm import tqdm
+
 def load_galaxies(directory, timesteps, N, Ngal1):
     '''loops through each simulation snapshot file and loads it into a NumPy array
     ---------------------------------------------------------------------------------------------------------------------
@@ -8,7 +12,6 @@ def load_galaxies(directory, timesteps, N, Ngal1):
     Ngal1 [integer]: total number of particles in galaxy one
     OUTPUT [NumPy array]: position, velocity, and potential arrays for each galaxy with shapes (timesteps x N x 3)
     '''
-    import numpy as np
     mod = 10
     # number of timesteps counting timestep 0
     Ntimesteps = int((timesteps + 1)/mod) + 1
@@ -85,12 +88,10 @@ def display(galaxies, scale = 100, savefig = False):
     
 def get_Energy(vel, pot):
     '''computes the relative Energy, epsilon, based on the velocity and potential'''
-    import numpy as np
     epsilon = pot - (1/2)*(vel[:,:,0:1]**2 + vel[:,:,1:2]**2 + vel[:,:,2:3]**2)
     return epsilon
 
 def plot_Ne(Energies, labels, savefig = False, bin_m = -3,  bin_M = .1):
-    import matplotlib.pyplot as plt
     # setup figure
     plt.figure(figsize = (5,5))
     plt.rcParams['font.family'] = 'Courier New'
