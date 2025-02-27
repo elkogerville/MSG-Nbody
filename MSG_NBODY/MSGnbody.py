@@ -1,3 +1,7 @@
+import numpy as np
+from tqdm import tqdm
+from accel_potential import accel_potential
+
 def MSGnbody(gal_pos, gal_vel, mass, dt, timesteps, directory, **kwargs):
     '''integrates the motion of N particles under their mutual gravitational attraction through space and time
     --------------------------------------------------------------------------------------------------------------------------
@@ -10,7 +14,7 @@ def MSGnbody(gal_pos, gal_vel, mass, dt, timesteps, directory, **kwargs):
         best practice is to create a folder within the code directory; the filename should have '{}' before the .npn extension
         example: directory = 'folder/filename{}.npy' 
     **kwargs: mod [integer]: by default, simulation saves every 10 timesteps but can be changed by passing the mod argument
-    OUTPUT [.npn file]: the program saves a simulation snapshot of the positions, velocities, and potential every 10 timesteps
+    OUTPUT [.npy file]: the program saves a simulation snapshot of the positions, velocities, and potential every 10 timesteps
     '''  
     ##################
     # simulation setup
