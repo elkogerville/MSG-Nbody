@@ -4,7 +4,7 @@ from numba import njit
 @njit()
 def accel_potential(pos, mass, accel, softening):
     '''calculates the gravitational acceleration acting onto each particle as well as the potential of each particle
-    ---------------------------------------------------------------------------------------------------------------------------------
+    ----------------------------------------------------------------------------------------------------------------
     pos [NumPy array]: N x 3 array containing the x,y,z position of each particle in the simulation
     mass [NumPy array]: N x 1 array containing the mass of each particle in the simulation
     accel [NumPy array]: N x 3 array to store the acceleration due to gravity of each particle
