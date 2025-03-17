@@ -53,7 +53,7 @@ def MSGnbody(gal_pos, gal_vel, mass, dt, timesteps, directory, **kwargs):
     # simulation loop
     #################
  
-    print('simulation running....  /ᐠ –ꞈ –ᐟ\<[pls be patient]')  
+    print(r'simulation running....  /ᐠ –ꞈ –ᐟ\<[pls be patient]')  
     for n in tqdm(range(1, timesteps+1)):       
         # 1/2 kick
         gal_vel += gal_accel * dt/2.0
@@ -72,4 +72,4 @@ def MSGnbody(gal_pos, gal_vel, mass, dt, timesteps, directory, **kwargs):
             phase_space = np.hstack((gal_pos, gal_vel, gal_potential))
             np.save(directory.format(n), phase_space)
     
-    return 'simulation complete [yay!!! (ﾐΦ ﻌ Φﾐ)✿ *ᵖᵘʳʳ*]'
+    return r'simulation complete [yay!!! (ﾐΦ ﻌ Φﾐ)✿ *ᵖᵘʳʳ*]'
